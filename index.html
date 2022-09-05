@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+
+    <meta name="author" content="Your Name">
+    <meta name="keywords" content="Keywords, Keyword2">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- <meta name="google-site-verification" content=""> -->
+
+    <meta name="description" content="ProjectName - India's best product ever!" />
+
+    <meta itemprop="name" content="Project">
+    <meta itemprop="image" content="/favicon.ico">
+    <meta itemprop="description" content="ProjectName - India's best product ever!">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="productName">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://yourdomain.com">
+    <meta property="og:title" content="ProductName - Prepare for this product. It's comming soo.">
+    <meta property="og:image" content="http://yourdomain.com/favicon.ico">
+    <meta property="og:description" content="ProjectName - India's best product ever!">
+    <meta property="og:site_name" content="ProductName - Prepare for this product. It's comming soo.">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <title>ProductName - Prepare for this product. It's comming soo</title>
+
+    <script src='https://unpkg.com/react@16.3.1/umd/react.production.min.js'></script>
+    <script src='https://unpkg.com/react-dom@16.3.1/umd/react-dom.production.min.js'></script>
+    <script src='https://unpkg.com/react-router-dom@5.0.0/umd/react-router-dom.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.9.0/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux-thunk/2.4.1/redux-thunk.min.js" crossorigin></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux-promise-middleware/6.1.2/redux-promise-middleware.min.js"
+        crossorigin></script>
+    <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.0/redux.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script src='https://unpkg.com/babel-standalone@6.26.0/babel.js'></script>
+    <script src="https://unpkg.com/react-bootstrap@next/dist/react-bootstrap.min.js" crossorigin></script>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <style>
+        textarea {
+            resize: none !important;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        snippet: '#3D3D3D',
+                        lightblue: '#F6F9FC', // stripe bg
+                        logoColor: '#EAB308', // our brand logo color
+                        buttonColor: '#000',
+                        editorColor: '#0A0E14', // ayu-dark
+                    },
+                    keyframes: {
+                        ring: {
+                            '0%': {
+                                'transform': 'rotate(0deg)',
+                                'box-shadow': '1px 5px 2px #e65c00'
+                            },
+                            '50%': {
+                                'transform': 'rotate(180deg)',
+                                'box-shadow': '1px 5px 2px #18b201'
+                            },
+                            '100%': {
+                                'transform': 'rotate(360deg)',
+                                'box-shadow': '1px 5px 2px #0456c8'
+                            }
+                        },
+                        text: {
+                            '50%': {
+                                color: 'black',
+                            }
+                        }
+                    },
+                    animation: {
+                        'ring': 'ring 2s linear infinite',
+                        'text': 'text 3s ease-in-out infinite',
+                    }
+                },
+                screens: {
+                    'sm': '640px',
+                    'md': '768px',
+                    'lg': '1024px',
+                    'xl': '1280px',
+                    '2xl': '1536px',
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/nprogress@0.2.0/nprogress.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/nprogress@0.2.0/nprogress.css">
+    <script>
+        NProgress.configure({
+            showSpinner: false,
+            template: `
+                <div class="bar" style="height: 4px !important; background-color: ${tailwind.config.theme.extend.colors.logoColor};" role="bar"></div>
+                <div class="spinner" role="spinner">
+                    <div class="spinner-icon">
+                    </div>
+                </div>`
+        });
+        function splash(miliseconds) {
+            $('#splashscreen').show();
+            $('#root').hide();
+            setTimeout(function () {
+                $('#splashscreen').hide();
+                $('#root').show();
+            }, miliseconds);
+        }
+    </script>
+
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/dial.css">
+</head>
+
+<body onload="splash(1000)">
+    <div id="splashscreen" class="h-screen bg-black flex flex-col items-center text-center justify-center">
+        <div class="absolute w-[200px] h-[200px] rounded-full animate-ring"></div>
+        <h4 class="text-white text-2xl font-semibold">ProductName</h4>
+    </div>
+    <div id="root" class="hidden"></div>
+
+    <!-- Common Functions -->
+    <script src="./js/common/init.js"></script>
+    <script src="./js/common/keys.js"></script>
+    <script src="./js/common/auth_state.js"></script>
+    <script src="./js/common/screen.js"></script>
+    <script src="./js/common/backbone.js"></script>
+    <script src="./js/common/helper.js"></script>
+    <script src="./js/common/network.js"></script>
+
+    <script src="./js/redux/actions/index.js"></script>
+    <script src="./js/redux/reducers/index.js"></script>
+    <script src="./js/redux/store.js"></script>
+
+    <!-- utility component -->
+    <script src="./js/components/utils/spinner.js" type="text/babel"></script>
+
+    <!-- high order components -->
+    <script src="./js/components/hoc/auth.js" type="text/babel"></script>
+
+    <!-- Components -->
+    <script src="./js/components/home/index.js" type="text/babel"></script>
+    <script src="./js/components/dashboard/index.js" type="text/babel"></script>
+    <script src="./js/components/conference/index.js" type="text/babel"></script>
+
+    <!-- Entry Point -->
+    <script src="./main.js" type="text/babel"></script>
+
+    <div id="snackbar">This will be replace automatically..</div>
+</body>
+
+</html>
